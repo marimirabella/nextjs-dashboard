@@ -35,7 +35,9 @@ interface DeleteInvoiceProps {
 }
 
 export function DeleteInvoice({ id }: DeleteInvoiceProps) {
-	const deleteInvoiceWithId = deleteInvoice.bind(null, id)
+	const deleteInvoiceWithId = deleteInvoice.bind(null, id) as (
+		formData: FormData,
+	) => Promise<void>
 
 	return (
 		<form action={deleteInvoiceWithId}>
